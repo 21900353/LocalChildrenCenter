@@ -11,17 +11,17 @@ public class QuestionDAO {
 	SqlSession sqlSession;
 	
 	public int insertQuestion(QuestionVO vo) {
-		int result = sqlSession.insert("Progress.insertProgress", vo);
+		int result = sqlSession.insert("Question.insertQuestion", vo);
 		return result;
 	}
 	
 	public int updateQuestion(QuestionVO vo) {
-		int result = sqlSession.update("Progress.updateProgress", vo);
+		int result = sqlSession.update("Question.updateQuestion", vo);
 		return result;
 	}
 	
 	public int deleteQuestion(int id) {
-		int result = sqlSession.delete("Progress.deleteProgress", id);
+		int result = sqlSession.delete("Question.deleteQuestion", id);
 		return result;
 	}
 	

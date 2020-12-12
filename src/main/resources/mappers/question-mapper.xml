@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Question">
+	<insert id="insertQuestion">
+		INSERT INTO question (name, title, content, answer_id)
+		VALUES
+		(#{name}, #{title}, #{content}, 1)
+	</insert>
+	<update id="updateQuestion">
+		UPDATE question
+		SET title=#{title}, content=#{content} 
+		WHERE id=#{id}
+	</update>
+	<delete id="deleteQuestion">
+		DELETE FROM question WHERE id=#{id}
+	</delete>
+	<select id="getQuestion" resultType="question">
+		SELECT * FROM question WHERE id=#{id}
+	</select>
+	<select id="getQuestionList" resultType="question">
+		SELECT * FROM question ORDER BY id DESC
+	</select>
+</mapper>

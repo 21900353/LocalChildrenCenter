@@ -22,6 +22,13 @@ public class ManageNoticeController {
 		return "manage/notice/list";
 	}
 	
+	@RequestMapping(value="/read/{id}", method=RequestMethod.GET)
+	public String readPost(@PathVariable("id") int id, Model model) {
+		NoticeVO noticeVO = noticeService.getNotice(id);
+		model.addAttribute("u", noticeVO);
+		return "manage/notice/read";
+	}
+	
 	@RequestMapping(value="/write", method=RequestMethod.GET)
 	public String writePost() {
 		return "manage/notice/write";
@@ -35,7 +42,7 @@ public class ManageNoticeController {
 		else {
 			System.out.println("공지 쓰기 성공");
 		}
-		return "redirect:manage/notice/list";
+		return "redirect:/manage/notice/list";
 	}
 	
 	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
@@ -53,7 +60,7 @@ public class ManageNoticeController {
 		else {
 			System.out.println("공지 수정 성공");
 		}
-		return "redirect:manage/notice/list";
+		return "redirect:/manage/notice/list";
 	}
 	
 	@RequestMapping(value="/deleteok/{id}", method=RequestMethod.GET)
@@ -64,6 +71,6 @@ public class ManageNoticeController {
 		else {
 			System.out.println("공지 삭제 성공");
 		}
-		return "redirect:../manage/notice/list";
+		return "redirect:/manage/notice/list";
 	}
 }

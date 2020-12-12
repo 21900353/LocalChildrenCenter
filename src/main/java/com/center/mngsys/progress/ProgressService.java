@@ -7,5 +7,5 @@ public interface ProgressService {
 	public int updateProgress(ProgressVO vo);
 	public int deleteProgress(int sid);
 	public ProgressVO getProgress(int sid);
-	public List<ProgressVO> getProgressList();
+	public List<ProgressVO> getProgressList(int grade);
 }

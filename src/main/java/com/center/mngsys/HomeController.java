@@ -24,7 +24,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+		// logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -36,4 +36,11 @@ public class HomeController {
 		return "home";
 	}
 	
+	/*
+	 * 관리자 페이지는 기본적으로 공지게시판 보기에서 시작합니다
+	 */
+	@RequestMapping(value = "/manage", method = RequestMethod.GET)
+	public String manage() {
+		return "redirect:manage/notice/list";
+	}
 }

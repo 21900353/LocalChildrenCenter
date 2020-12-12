@@ -12,17 +12,17 @@ public class AnswerDAO {
 	SqlSession sqlSession;
 	
 	public int insertAnswer(AnswerVO vo) {
-		int result = sqlSession.insert("Progress.insertProgress", vo);
+		int result = sqlSession.insert("Answer.insertAnswer", vo);
 		return result;
 	}
 	
 	public int updateAnswer(AnswerVO vo) {
-		int result = sqlSession.update("Progress.updateProgress", vo);
+		int result = sqlSession.update("Answer.updateAnswer", vo);
 		return result;
 	}
 	
 	public int deleteAnswer(int id) {
-		int result = sqlSession.delete("Progress.deleteProgress", id);
+		int result = sqlSession.delete("Answer.deleteAnswer", id);
 		return result;
 	}
 	

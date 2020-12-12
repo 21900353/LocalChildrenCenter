@@ -27,11 +27,13 @@ public class ManageQnaController {
 		return "manage/qna/list";
 	}
 	
-	@RequestMapping(value="/read?id={id}", method=RequestMethod.GET)
+	@RequestMapping(value="/read/{id}", method=RequestMethod.GET)
 	public String readQuestion(@PathVariable("id") int id, Model model) {
 		QuestionVO questionVO = questionService.getQuestion(id);
+		AnswerVO answerVO = answerService.getAnswer(id);
 		model.addAttribute("q", questionVO);
-		return "question/read";
+		model.addAttribute("a", answerVO);
+		return "manage/qna/read";
 	}
 	
 	@RequestMapping(value="/answer/{id}", method=RequestMethod.GET)
@@ -49,28 +51,25 @@ public class ManageQnaController {
 		else {
 			System.out.println("답변 쓰기 성공");
 		}
-		return "redirect:manage/qna/list";
+		return "redirect:/manage/qna/list";
 	}
 	
 	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
 	public String editAnswer(@PathVariable("id") int id, Model model) {
-		QuestionVO questionVO = questionService.getQuestion(id);
-		model.addAttribute("q", questionVO);
+		AnswerVO answerVO = answerService.getAnswer(id);
+		model.addAttribute("a", answerVO);
 		return "manage/qna/edit";
 	}
 	
 	@RequestMapping(value="/editok", method=RequestMethod.POST)
-	public String editAnswerOK(AnswerVO avo, QuestionVO qvo) {
-		if (answerService.updateAnswer(avo) == 0) {
+	public String editAnswerOK(AnswerVO vo) {
+		if (answerService.updateAnswer(vo) == 0) {
 			System.out.println("답변 수정 실패");
 		}
 		else {
-			qvo.setAnswer_id(avo.getId());
-			if (questionService.updateQuestion(qvo) != 0) {
-				System.out.println("답변 수정 성공");
-			}
+			System.out.println("답변 수정 성공");
 		}
-		return "redirect:manage/qna/list";
+		return "redirect:/manage/qna/list";
 	}
 	
 	@RequestMapping(value="/deleteqok/{id}", method=RequestMethod.GET)

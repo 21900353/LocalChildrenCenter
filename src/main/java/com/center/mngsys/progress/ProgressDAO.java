@@ -30,8 +30,8 @@ public class ProgressDAO {
 		return progress;
 	}
 	
-	public List<ProgressVO> getProgressList() {
-		List<ProgressVO> progressList = sqlSession.selectList("Progress.getProgressList");
+	public List<ProgressVO> getProgressList(int grade) {
+		List<ProgressVO> progressList = sqlSession.selectList("Progress.getProgressList", grade);
 		return progressList;
 	}
 }

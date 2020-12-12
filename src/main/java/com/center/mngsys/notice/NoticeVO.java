@@ -1,5 +1,6 @@
 package com.center.mngsys.notice;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class NoticeVO {
@@ -7,6 +8,7 @@ public class NoticeVO {
 	private Date postdate;
 	private String title;
 	private String content;
+	private String postdate_f;
 	
 	public int getId() {
 		return id;
@@ -31,5 +33,9 @@ public class NoticeVO {
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+	public String getPostdate_f() {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		return format.format(getPostdate());
 	}
 }

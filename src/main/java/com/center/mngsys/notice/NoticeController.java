@@ -19,7 +19,7 @@ public class NoticeController {
 		return "notice/list";
 	}
 	
-	@RequestMapping(value="/read?id={id}", method=RequestMethod.GET)
+	@RequestMapping(value="/read/{id}", method=RequestMethod.GET)
 	public String readPost(@PathVariable("id") int id, Model model) {
 		NoticeVO noticeVO = noticeService.getNotice(id);
 		model.addAttribute("u", noticeVO);

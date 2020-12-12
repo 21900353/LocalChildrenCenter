@@ -1,7 +1,5 @@
 package com.center.mngsys.manage;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,15 +16,15 @@ public class ManageProgressController {
 	@Autowired
 	ProgressServiceImpl progressService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public String progresslist(Model model) {
-		model.addAttribute("list", progressService.getProgressList());
-		return "manage/progress/list";
+	@RequestMapping(value="/{grade}", method=RequestMethod.GET)
+	public String progresslist(@PathVariable("grade") int grade, Model model) {
+		model.addAttribute("list", progressService.getProgressList(grade));
+		return "manage/progress/view";
 	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.GET)
 	public String addStudent() {
-		return "manage/notice/add";
+		return "manage/progress/add";
 	}
 	
 	@RequestMapping(value="/addok", method=RequestMethod.POST)
@@ -37,20 +35,19 @@ public class ManageProgressController {
 		else {
 			System.out.println("학생 추가 성공");
 		}
-		return "redirect:manage/progress/list";
+		return "redirect:/manage/progress/view";
 	}
 	
 	@RequestMapping(value="/updateok", method=RequestMethod.POST)
-	public String updateProgressOK(List<ProgressVO> vo) {
-		for (ProgressVO progress : vo) {
-			if (progressService.updateProgress(progress) == 0) {
-				System.out.println("학습상태 수정 실패");
-			}
-			else {
-				System.out.println("학습상태 수정 성공");
-			}
+	public String updateProgressOK(ProgressVO vo) {
+		int grade = vo.getGrade();
+		if (progressService.updateProgress(vo) == 0) {
+			System.out.println("학습상태 수정 실패");
 		}
-		return "redirect:manage/progress/list";
+		else {
+			System.out.println("학습상태 수정 성공");
+		}
+		return "redirect:/manage/progress/" + grade;
 	}
 	
 	@RequestMapping(value="/deleteok/{id}", method=RequestMethod.GET)
@@ -61,6 +58,6 @@ public class ManageProgressController {
 		else {
 			System.out.println("학생 삭제 성공");
 		}
-		return "redirect:../manage/progress/list";
+		return "redirect:/manage/progress/view";
 	}
 }

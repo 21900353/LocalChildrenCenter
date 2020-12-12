@@ -1,5 +1,6 @@
 package com.center.mngsys.question;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class QuestionVO {
@@ -9,6 +10,7 @@ public class QuestionVO {
 	private String title;
 	private String content;
 	private int answer_id;
+	private String postdate_f;
 	
 	public int getId() {
 		return id;
@@ -45,6 +47,10 @@ public class QuestionVO {
 	}
 	public void setAnswer_id(int answer_id) {
 		this.answer_id = answer_id;
+	}
+	public String getPostdate_f() {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		return format.format(getPostdate());
 	}
 
 }

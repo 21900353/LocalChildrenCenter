@@ -30,8 +30,8 @@ public class ProgressServiceImpl implements ProgressService {
 	}
 
 	@Override
-	public List<ProgressVO> getProgressList() {
-		return progressDAO.getProgressList();
+	public List<ProgressVO> getProgressList(int grade) {
+		return progressDAO.getProgressList(grade);
 	}
 	
 }
