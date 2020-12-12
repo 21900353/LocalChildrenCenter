@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Progress">
+	<insert id="insertProgress">
+		INSERT INTO progress (name, grade)
+		VALUES
+		(#{name}, #{grade})
+	</insert>
+	<update id="updateProgress">
+		UPDATE progress
+		SET obj1=#{obj1}, obj2=#{obj2}, obj3=#{obj3}  
+		WHERE sid=#{sid}
+	</update>
+	<delete id="deleteProgress">
+		DELETE FROM progress WHERE sid=#{sid}
+	</delete>
+	<select id="getProgressList" resultType="progress">
+		SELECT * FROM progress WHERE grade=#{grade} ORDER BY sid DESC
+	</select>
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	<typeAliases>
+		<typeAlias alias="notice" type="com.center.mngsys.notice.NoticeVO"/>
+		<typeAlias alias="progress" type="com.center.mngsys.progress.ProgressVO"/>
+		<typeAlias alias="question" type="com.center.mngsys.question.QuestionVO"/>
+		<typeAlias alias="answer" type="com.center.mngsys.answer.AnswerVO"/>
+	</typeAliases>
+</configuration>
