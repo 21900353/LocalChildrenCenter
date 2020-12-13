@@ -55,16 +55,16 @@
           <li class="menu-active"><a>공지게시판</a></li>
           <li class="menu-has-children"><a>학습현황</a>
             <ul>
-              <li><a href="../../manage/progress/1">1학년</a></li>
-              <li><a href="../../manage/progress/2">2학년</a></li>
-              <li><a href="../../manage/progress/3">3학년</a></li>
-              <li><a href="../../manage/progress/4">4학년</a></li>
-              <li><a href="../../manage/progress/5">5학년</a></li>
-              <li><a href="../../manage/progress/6">6학년</a></li>
+              <li><a href="../../../manage/progress/1">1학년</a></li>
+              <li><a href="../../../manage/progress/2">2학년</a></li>
+              <li><a href="../../../manage/progress/3">3학년</a></li>
+              <li><a href="../../../manage/progress/4">4학년</a></li>
+              <li><a href="../../../manage/progress/5">5학년</a></li>
+              <li><a href="../../../manage/progress/6">6학년</a></li>
             </ul>
           </li>
-          <li><a href="../../manage/qna/list">질문게시판</a></li>
-          <li><a class="btn btn-outline-info" href="../logout">관리자 나가기</a></li>
+          <li><a href="../../../manage/qna/list">질문게시판</a></li>
+          <li><a class="btn btn-outline-info" href="../../../">관리자 나가기</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>

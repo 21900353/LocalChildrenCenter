@@ -62,7 +62,7 @@
             </ul>
           </li>
           <li><a href="../../manage/qna/list">질문게시판</a></li>
-          <li><a class="btn btn-outline-info" href="../../logout">관리자 나가기</a></li>
+          <li><a class="btn btn-outline-info" href="../../">관리자 나가기</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>

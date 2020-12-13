@@ -49,7 +49,7 @@
           <li><a href="../#about">소개</a></li>
           <li><a href="../#contact">오시는 길</a></li>
           <li><a>공지게시판</a></li>
-          <li class="menu-has-children"><a>학습현황</a>
+          <li class="menu-has-children"><a href="../notice/list">학습현황</a>
             <ul>
               <li><a href="../progress/1">1학년</a></li>
               <li><a href="../progress/2">2학년</a></li>

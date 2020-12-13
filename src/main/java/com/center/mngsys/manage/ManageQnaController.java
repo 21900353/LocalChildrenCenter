@@ -81,7 +81,7 @@ public class ManageQnaController {
 			
 			System.out.println("질문 삭제 성공");
 		}
-		return "redirect:../manage/qna/list";
+		return "redirect:/manage/qna/list";
 	}
 	
 	@RequestMapping(value="/deleteaok/{id}", method=RequestMethod.GET)
@@ -90,11 +90,8 @@ public class ManageQnaController {
 			System.out.println("답변 삭제 실패");
 		}
 		else {
-			qvo.setAnswer_id(0);
-			if (questionService.updateQuestion(qvo) != 0) {
-				System.out.println("답변 삭제 성공");
-			}
+			System.out.println("답변 삭제 성공");
 		}
-		return "redirect:../manage/qna/list";
+		return "redirect:/manage/qna/list";
 	}
 }

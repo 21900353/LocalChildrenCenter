@@ -14,8 +14,8 @@
 		WHERE id=#{id}
 	</update>
 	<delete id="deleteAnswer">
-		DELETE FROM answer WHERE id=#{aid};
-		UPDATE question SET answer_id=1 WHERE id={qid};
+		UPDATE question SET answer_id=1 WHERE id=#{id};
+		DELETE FROM answer WHERE id=#{id};
 	</delete>
 	<select id="getAnswer" resultType="answer">
 		SELECT * FROM answer WHERE id=#{id}

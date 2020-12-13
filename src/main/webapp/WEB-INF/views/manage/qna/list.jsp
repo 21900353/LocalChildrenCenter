@@ -50,7 +50,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="../../manage/notice/list">질문게시판</a></li>
+          <li><a href="../../manage/notice/list">공지게시판</a></li>
           <li class="menu-has-children"><a>학습현황</a>
             <ul>
               <li><a href="../../manage/progress/1">1학년</a></li>
@@ -62,7 +62,7 @@
             </ul>
           </li>
           <li class="menu-active"><a>질문게시판</a></li>
-          <li><a class="btn btn-outline-info" href="../../logout">관리자 나가기</a></li>
+          <li><a class="btn btn-outline-info" href="../../">관리자 나가기</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>

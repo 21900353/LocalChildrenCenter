@@ -25,7 +25,17 @@
 
   <!-- Template Main CSS File -->
   <link href="../../../css/style.css" rel="stylesheet">
+  <script>
+	function deleteq_ok(id){
+		var a = confirm("정말로 삭제하겠습니까?");
+		if(a) location.href='../deleteqok/' + id;
+	}
 
+	function deletea_ok(id){
+		var a = confirm("정말로 삭제하겠습니까?");
+		if(a) location.href='../deleteaok/' + id;
+	}
+  </script>
   <!-- =======================================================
   * Template Name: Reveal - v2.2.0
   * Template URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
@@ -58,7 +68,7 @@
             </ul>
           </li>
           <li class="menu-active"><a>질문게시판</a></li>
-          <li><a class="btn btn-outline-info" href="../../logout">관리자 나가기</a></li>
+          <li><a class="btn btn-outline-info" href="../../../">관리자 나가기</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -76,12 +86,14 @@
 			<p>날짜: ${q.postdate_f}</p>
 			<hr>
 			<p>${q.content}</p>
+			<a href="javascript:deleteq_ok('${q.id}')" class="btn btn-danger btn-sm">질문삭제</a>
+			<br/>
 			<c:if test="${q.answer_id ne 1 }">
 				<hr>
 				<h4>답변</h4>
 				<p>날짜: ${a.postdate_f}<p>
 				<p>${a.content}</p>
-				<a href="../edit/${a.id}" class="btn btn-primary btn-sm">수정</a>
+				<a href="../edit/${a.id}" class="btn btn-primary btn-sm">수정</a> <a href="javascript:deletea_ok('${a.id}')" class="btn btn-danger btn-sm">답변삭제</a>
 			</c:if>
 		  </div>
 		</div>
